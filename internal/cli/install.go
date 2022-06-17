@@ -499,7 +499,7 @@ func installRunner(
 	}
 
 	// We set the ID to be "init" since it is the initial static runner
-	id := "init"
+	id := "static"
 
 	// Install!
 	s.Update("Installing runner...")
