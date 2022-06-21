@@ -527,8 +527,7 @@ func installRunner(
 
 	err = installutil.AdoptRunner(ctx, ui, client, id, advertiseAddr.Addr)
 	if err != nil {
-		s.Update("Error adopting runner: %s", err)
-		s.Status(terminal.StatusError)
+		ui.Output("Error adopting runner: %s", clierrors.Humanize(err), terminal.WithErrorStyle())
 		return 1
 	}
 
